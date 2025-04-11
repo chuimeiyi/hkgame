@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +21,8 @@ public class playerMovement : MonoBehaviour
     public LayerMask groundLayer;
 
     Animator animator;
+    int magnitude = 0;
+    int idle = 0;
 
     private void Start()
     {
@@ -32,16 +35,29 @@ public class playerMovement : MonoBehaviour
         rb.velocity = new Vector2(horizontalMovement * moveSpeed, rb.velocity.y);
 
         // Check if the vertical velocity is greater than or less than zero
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))   //right
         {
             animator.SetFloat("magnitude", 1);
+            animator.SetFloat("idle", 1);
+
+            magnitude = 1;
+            idle = 0;
         }
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A))   //left
         {
             animator.SetFloat("magnitude", 2);
+            animator.SetFloat("idle", 1);
+
+            magnitude = 2;
+            idle = 0;
         }
-        else{
-            animator.SetFloat("magnitude", 0);
+        else if (magnitude > 1 || idle > 1 ) {     //idle for each right, left
+            animator.SetFloat("magnitude", magnitude);
+            animator.SetFloat("idle", idle);
+        }
+        else {
+            animator.SetFloat("magnitude", -1);   
+            animator.SetFloat("idle", -1);
         }
     }
 
