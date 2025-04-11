@@ -30,7 +30,19 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
         rb.velocity = new Vector2(horizontalMovement * moveSpeed, rb.velocity.y);
-        animator.SetFloat("magnitude", 1);
+
+        // Check if the vertical velocity is greater than or less than zero
+        if (Input.GetKey(KeyCode.D))
+        {
+            animator.SetFloat("magnitude", 1);
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            animator.SetFloat("magnitude", 2);
+        }
+        else{
+            animator.SetFloat("magnitude", 0);
+        }
     }
 
     public void Move(InputAction.CallbackContext context) {
@@ -55,7 +67,7 @@ public class playerMovement : MonoBehaviour
             return true;
         }
         return false;
-    
+
     }
 
     private void OnDrawGizmosSelected()
