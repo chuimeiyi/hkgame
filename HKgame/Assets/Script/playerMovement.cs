@@ -19,10 +19,18 @@ public class playerMovement : MonoBehaviour
     public Vector2 groundCheckSize = new Vector2(0.5f, 0.05f);
     public LayerMask groundLayer;
 
+    Animator animator;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        animator = rb.GetComponent<Animator>();
+    }
+
     void Update()
     {
         rb.velocity = new Vector2(horizontalMovement * moveSpeed, rb.velocity.y);
-
+        animator.SetFloat("magnitude", 1);
     }
 
     public void Move(InputAction.CallbackContext context) {
