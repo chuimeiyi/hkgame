@@ -8,21 +8,19 @@ using UnityEngine.UI;
 
 public class TextHPUI : MonoBehaviour
 {
-    public int health;
-    public int currentHealth;
+    private int health;
+    private int currentHealth;
     public Text healthText;
 
     public void SetMaxHealths(int maxHealths) {
-        health = maxHealths; 
+        health = maxHealths;
+        healthText.text = "x" + health.ToString();
+        healthText = GetComponent<Text>();
     }
    
     public void UpdateHealths(int currHealth) {
-        for(int i = 0; i < health; i++) {
-            if (i == currHealth) {
-                currentHealth = i;
-                healthText.text = "x" + currentHealth.ToString();
-            }    
-        }
+        currentHealth = currHealth;
+        healthText.text = "x" + currentHealth.ToString();
     }
 
 }

@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -8,16 +11,17 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;
 
     public TextHPUI textHPUI;
-    public playerMovement playMovement;
 
     private SpriteRenderer spriteRenderer;
+
+    public static event Action OnPlayedDied;
+
     void Start()
     {
-        currentHealth = maxHealth;
-
-        textHPUI.SetMaxHealths(maxHealth);
+        ResetHealth();
 
         spriteRenderer = GetComponent<SpriteRenderer>();
+        GameController.OnReset += ResetHealth;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -28,14 +32,19 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void TakeDamage(int damage) {
+    void ResetHealth() {
+        currentHealth = maxHealth;
+        textHPUI.SetMaxHealths(maxHealth);
+    }
+
+    public void TakeDamage(int damage) {
         currentHealth -= damage;
         textHPUI.UpdateHealths(currentHealth);
 
         StartCoroutine(FlashRed());
 
         if (currentHealth <= 0) {
-            //sm    
+            OnPlayedDied.Invoke();
         }
     }
 
@@ -44,4 +53,5 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         spriteRenderer.color = Color.white;
     }
+
 }
