@@ -11,6 +11,9 @@ public class GameController: MonoBehaviour
 {
     public static event Action OnReset;
 
+    public GameObject hpUI;
+    public GameObject ScoreUI;
+    public GameObject pauseButton;
     public GameObject pauseMenu;
     public GameObject gameOverScreen;
     public Text score;
@@ -23,6 +26,9 @@ public class GameController: MonoBehaviour
     
     public void RestartGame() {
         gameOverScreen.SetActive(false);
+        pauseButton.SetActive(true);
+        hpUI.SetActive(true);
+        ScoreUI.SetActive(true);
         scoreCount = 0;
         OnReset.Invoke();
         // RestartScene();   // ­«¶}scene
@@ -31,6 +37,9 @@ public class GameController: MonoBehaviour
    
     void GameOverScreen() {
         gameOverScreen.SetActive(true);
+        pauseButton.SetActive(false);
+        hpUI.SetActive(false);
+        ScoreUI.SetActive(false);
         Time.timeScale = 0;
     }
     public void Pause()
