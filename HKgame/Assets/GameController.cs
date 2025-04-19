@@ -25,6 +25,8 @@ public class GameController: MonoBehaviour
         gameOverScreen.SetActive(false);
         scoreCount = 0;
         OnReset.Invoke();
+        // RestartScene();   // 重開scene
+        // 想傳送到spawnpoint
     }
    
     void GameOverScreen() {
@@ -42,5 +44,11 @@ public class GameController: MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
     }
+
+    /*備用計劃
+    public void RestartScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    */
 
 }
