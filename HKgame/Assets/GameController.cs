@@ -5,11 +5,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController: MonoBehaviour
 {
     public static event Action OnReset;
 
+    public GameObject pauseMenu;
     public GameObject gameOverScreen;
     public Text score;
     private int scoreCount;
@@ -27,7 +29,18 @@ public class GameController: MonoBehaviour
    
     void GameOverScreen() {
         gameOverScreen.SetActive(true);
+        Time.timeScale = 0;
+    }
+    public void Pause()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0;
     }
 
+    public void Continue()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+    }
 
 }

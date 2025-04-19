@@ -35,6 +35,7 @@ public class PlayerHealth : MonoBehaviour
     void ResetHealth() {
         currentHealth = maxHealth;
         textHPUI.SetMaxHealths(maxHealth);
+        Time.timeScale = 1;
     }
 
     public void TakeDamage(int damage) {
