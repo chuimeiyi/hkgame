@@ -8,7 +8,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
    public int maxHealth = 5;
-    public int currentHealth;
+    private int currentHealth;
 
     public TextHPUI textHPUI;
 
