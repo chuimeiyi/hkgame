@@ -2328,8 +2328,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: f72418cf233f51545b2c997228046810, type: 2}
-  ScoreUI: {fileID: 24305325}
-  pauseButton: {fileID: 303531792}
   pauseMenu: {fileID: 2096339691}
   gameOverScreen: {fileID: 656210756}
   score: {fileID: 1599905332}
