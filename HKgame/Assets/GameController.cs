@@ -6,9 +6,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class GameController: MonoBehaviour
 {
+
+    public AudioMixer audioMixer;
+
     public static event Action OnReset;
 
     public GameObject pauseMenu;
@@ -55,5 +59,8 @@ public class GameController: MonoBehaviour
         yield return new WaitForSecondsRealtime(3);
 
     }
-
+    public void SetVolume(float value)
+    {
+        audioMixer.SetFloat("MainVolume", value);
+    }
 }
