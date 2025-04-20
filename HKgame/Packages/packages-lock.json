@@ -92,6 +92,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -105,6 +106,9 @@
 =======
       "version": "1.8.4",
 >>>>>>> 74a7cea4328afc1a01db2f2c6db5db9a27011411
+=======
+      "version": "1.8.8",
+>>>>>>> Stashed changes
       "depth": 3,
       "source": "registry",
       "dependencies": {
