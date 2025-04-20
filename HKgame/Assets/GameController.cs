@@ -6,9 +6,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
+
 
 public class GameController: MonoBehaviour
 {
+    public AudioMixer audioMixer;
+
     public static event Action OnReset;
 
     public GameObject pauseMenu;
@@ -45,6 +49,9 @@ public class GameController: MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void SetVolume(float value) {
+        audioMixer.SetFloat("MainVolume", value);
+    }
     /*³Æ¥Î­p¹º
     public void RestartScene() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
