@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 
 public class playerMovement : MonoBehaviour
 {
 
     public Rigidbody2D rb;
+
     [Header("Movement")]
     public float moveSpeed = 5f;
-    float horizontalMovement;
 
     [Header("Jumping")]
     public float jumpPower = 5f;
@@ -20,9 +20,14 @@ public class playerMovement : MonoBehaviour
     public Vector2 groundCheckSize = new Vector2(0.5f, 0.05f);
     public LayerMask groundLayer;
 
+    public KeyCode left;
+    public KeyCode right;
+    public KeyCode jump;
+
     Animator animator;
     int magnitude = 0;
     int idle = 0;
+    private bool isGrounded;
 
     private void Start()
     {
@@ -32,21 +37,24 @@ public class playerMovement : MonoBehaviour
 
     void Update()
     {
-        rb.velocity = new Vector2(horizontalMovement * moveSpeed, rb.velocity.y);
+        isGrounded = Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer);
 
-        // Check if the vertical velocity is greater than or less than zero
-        if (Input.GetKey(KeyCode.D))   //right
+        float horizontalMovement = Input.GetAxis("Horizontal");
+
+        if (Input.GetKey(right))   //right
         {
             animator.SetFloat("magnitude", 1);
             animator.SetFloat("idle", 1);
+            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
 
             magnitude = 1;
             idle = 0;
         }
-        else if (Input.GetKey(KeyCode.A))   //left
+        else if (Input.GetKey(left))   //left
         {
             animator.SetFloat("magnitude", 2);
             animator.SetFloat("idle", 1);
+            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
 
             magnitude = 2;
             idle = 0;
@@ -54,38 +62,23 @@ public class playerMovement : MonoBehaviour
         else if (magnitude > 1 || idle > 1 ) {     //idle for each right, left
             animator.SetFloat("magnitude", magnitude);
             animator.SetFloat("idle", idle);
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
         else {
             animator.SetFloat("magnitude", -1);   
             animator.SetFloat("idle", -1);
+            rb.velocity = new Vector2( 0 , rb.velocity.y);
         }
-    }
 
-    public void Move(InputAction.CallbackContext context) {
-        horizontalMovement = context.ReadValue<Vector2>().x;
-    }
-
-    public void jump(InputAction.CallbackContext context){
-        if (isGrounded()) {
-            if (context.performed)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-            }
-            else if (context.canceled)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-            }
-
+        if (Input.GetKeyDown(jump) && isGrounded)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
         }
-    }
-    private bool isGrounded() {
-        if (Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer)) { 
-            return true;
-        }
-        return false;
 
     }
 
+    
+    
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
