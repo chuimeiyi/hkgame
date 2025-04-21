@@ -1,0 +1,14 @@
+[show]
+[image,unhappy,unhappy,0,0,0,spFadeIn_2000]
+
+"What should I do to give her an unforgettable anniversary?"[w]
+"Let me think..."[w]
+"Giving various gifts seems too superficial and not profound at all."[w]
+
+[remove,unhappy,spFadeOut_2000]
+[image,happy,happy,0,0,0,spFadeIn_2000]
+"How about taking her on a one-day tour in Hong Kong?"[w]
+"I think she will be very happy! It's settled then!"[w]
+
+[remove,happy,spFadeOut_1000]
+[load_scene,stage_1]

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class gogobutton : MonoBehaviour
 {
-    public string sceneName;
+   
     public void GoScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
