@@ -11,4 +11,5 @@
 "I think she will be very happy! It's settled then!"[w]
 
 [remove,happy,spFadeOut_1000]
+[hide]
 [load_scene,stage_1]
