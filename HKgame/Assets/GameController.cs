@@ -32,11 +32,12 @@ public class GameController: MonoBehaviour
         // RestartScene();   // 重開scene
         // 想傳送到spawnpoint
     }
-   
+
     void GameOverScreen() {
         gameOverScreen.SetActive(true);
         Time.timeScale = 0;
     }
+
     public void Pause()
     {
         pauseMenu.SetActive(true);

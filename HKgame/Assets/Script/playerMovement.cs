@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -28,6 +28,8 @@ public class playerMovement : MonoBehaviour
     int magnitude = 0;
     int idle = 0;
     private bool isGrounded;
+
+    public colC item;
 
     private void Start()
     {
@@ -85,6 +87,15 @@ public class playerMovement : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(groundCheckPos.position, groundCheckSize);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("item1"))
+        {
+            item.itemCount++;
+            Destroy(collision.gameObject);
+        }
     }
 
 }
