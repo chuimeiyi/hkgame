@@ -28,8 +28,8 @@ public class playerMovement : MonoBehaviour
     int magnitude = 0;
     int idle = 0;
     private bool isGrounded;
-
-    public colC item;
+    public string items;
+    public colC process;
 
     private void Start()
     {
@@ -91,9 +91,9 @@ public class playerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("item1"))
+        if (collision.gameObject.CompareTag(items))
         {
-            item.itemCount++;
+            process.itemCount++;
             Destroy(collision.gameObject);
         }
     }
