@@ -19,6 +19,7 @@ public class GameController: MonoBehaviour
     public GameObject gameOverScreen;
     public Text score;
     private int scoreCount;
+    public colC itemCount;
     void Start()
     {
         PlayerHealth.OnPlayedDied += GameOverScreen;
@@ -64,4 +65,5 @@ public class GameController: MonoBehaviour
     {
         audioMixer.SetFloat("MainVolume", value);
     }
+
 }
