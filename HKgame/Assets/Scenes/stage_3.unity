@@ -1287,6 +1287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
+  currentHealth: 0
   textHPUI: {fileID: 358133701}
 --- !u!1 &172984110
 GameObject:
@@ -2077,7 +2078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eebb429fcc90c741810a6ee2aa4ba71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 358133702}
+  hpText: {fileID: 358133702}
 --- !u!114 &358133702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5571,6 +5572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
+  currentHealth: 0
   textHPUI: {fileID: 358133701}
 --- !u!114 &1389102856
 MonoBehaviour:

@@ -2,29 +2,23 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro.EditorUtilities;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class TextHPUI : MonoBehaviour
 {
-    private int health;
-    private int currentHealth;
-    public Text healthText;
+    public Text hpText; 
+    
 
-    void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-    public void SetMaxHealths(int maxHealths) {
-        health = maxHealths;
-        healthText.text = "x" + health.ToString();
-        healthText = GetComponent<Text>();
-    }
-   
-    public void UpdateHealths(int currHealth) {
-        currentHealth = currHealth;
-        healthText.text = "x" + currentHealth.ToString();
+    public void SetMaxHealth(int maxHealth){
+        hpText.text = "HP: " + maxHealth.ToString();
+        
     }
 
+    public void UpdateHealth(int currentHealth) {
+        hpText.text = "HP: " + currentHealth.ToString();
+
+    }
 }

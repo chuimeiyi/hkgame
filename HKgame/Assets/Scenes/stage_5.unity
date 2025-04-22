@@ -1287,6 +1287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
+  currentHealth: 0
   textHPUI: {fileID: 358133701}
 --- !u!1 &187175765
 GameObject:
@@ -1978,8 +1979,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -280.739, y: 122.42064}
-  m_SizeDelta: {x: 168.4, y: 142.8}
+  m_AnchoredPosition: {x: -256.2, y: 122.42064}
+  m_SizeDelta: {x: 300, y: 142.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &358133701
 MonoBehaviour:
@@ -1993,7 +1994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eebb429fcc90c741810a6ee2aa4ba71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 358133702}
+  hpText: {fileID: 358133702}
 --- !u!114 &358133702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2016,7 +2017,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 120
+    m_FontSize: 90
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -5571,6 +5572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
+  currentHealth: 0
   textHPUI: {fileID: 358133701}
 --- !u!114 &1389102856
 MonoBehaviour:

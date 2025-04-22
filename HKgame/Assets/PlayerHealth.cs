@@ -8,7 +8,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
    public int maxHealth = 5;
-    private int currentHealth;
+   public int currentHealth;
 
     public TextHPUI textHPUI;
 
@@ -34,13 +34,13 @@ public class PlayerHealth : MonoBehaviour
 
     void ResetHealth() {
         currentHealth = maxHealth;
-        textHPUI.SetMaxHealths(maxHealth);
+        textHPUI.SetMaxHealth(maxHealth);
         Time.timeScale = 1;
     }
 
     public void TakeDamage(int damage) {
         currentHealth -= damage;
-        textHPUI.UpdateHealths(currentHealth);
+        textHPUI.UpdateHealth(currentHealth);
 
         StartCoroutine(FlashRed());
 
