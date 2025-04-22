@@ -12,7 +12,7 @@
 "That¡¯s great! I¡¯m excited to hear about the surprises you¡¯ve prepared for today!"[w]
 [remove,yellowhappy,spFadeOut_2000]
 
-image,hesehahahappy,hese3,-9,-2,0,spFadeIn_2000]
+[image,hesehahahappy,hese3,-9,-2,0,spFadeIn_2000]
 "That's wonderful! I'm looking forward to it too!"[w]
 [remove,hesehahahappy,spFadeOut_2000]
 [hide]
