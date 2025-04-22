@@ -4,6 +4,7 @@ using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Flower;
 
 public class colC : MonoBehaviour
 {
@@ -13,12 +14,11 @@ public class colC : MonoBehaviour
     public Text totaliscorecount;
     public GameObject finishscreen;
     int total;
+
+ 
     // Start is called before the first frame update
 
-    void Start()
-    {
-        total = PlayerPrefs.GetInt("total", total);
-    }
+   
 
     // Update is called once per frame
     void Update()
@@ -32,6 +32,7 @@ public class colC : MonoBehaviour
 
         totaliscorecount.text = "score :" + total.ToString();
         if (itemCount == 10) {
+         
             finishscreen.SetActive(true);
             Time.timeScale = 0;
         }
@@ -43,5 +44,6 @@ public class colC : MonoBehaviour
         PlayerPrefs.SetInt("total", total);
         PlayerPrefs.Save();
     }
+
 
 }

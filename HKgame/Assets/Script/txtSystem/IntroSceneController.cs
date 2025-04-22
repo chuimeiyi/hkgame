@@ -13,6 +13,7 @@ public class IntroSceneController : MonoBehaviour
         fs = FlowerManager.Instance.CreateFlowerSystem("nekoQAQ", false); 
         fs.SetupDialog();
         fs.ReadTextFromResource("intro");
+        fs.SetScreenReference(1920, 1080);
         fs.RegisterCommand("load_scene", (List<string>_params) => {
             SceneManager.LoadScene(_params[0]);
         });
