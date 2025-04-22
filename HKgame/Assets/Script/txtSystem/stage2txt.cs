@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Flower;
 
-public class stage1txt : MonoBehaviour
+public class stage2txt : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -11,7 +11,7 @@ public class stage1txt : MonoBehaviour
     void Start()
     {
         fs = FlowerManager.Instance.GetFlowerSystem("nekoQAQ");
-        fs.ReadTextFromResource("introTo1");
+        fs.ReadTextFromResource("1to2");
     }
 
     // Update is called once per frame

@@ -1,18 +1,26 @@
 [show]
 
+
+[image,hesehahahappy,hese3,-9,-2,0,spFadeIn_2000]
+"The first gift is actually a model, which really surprised me! I like it a lot!"[w]
+[remove,hesehahahappy,spFadeOut_2000]
+
 [image,yellowhappy,yellow3,-9,-2,0,spFadeIn_2000]
-"What do you think of the scenery here?"[w]
+"Isn't it a surprise? We've arrived at the next place!"[w]
 [remove,yellowhappy,spFadeOut_2000]
 
 [image,hesehappy,hese4,-9,-2,0,spFadeIn_2000]
-"I think it's really nice and full of life!"[w]
+"It's Lion Rock. Did you know that Lion Rock has significant historical meaning in Hong Kong? "[w]
+"It symbolizes the resilience of the Hong Kong people, and there are also some historical relics on the mountain."
 [remove,hesehappy,spFadeOut_2000]
 
-[image,yellowhappy,yellow3,-9,-2,0,spFadeIn_2000]
-"That¡¯s great! I¡¯m excited to hear about the surprises you¡¯ve prepared for today!"[w]
-[remove,yellowhappy,spFadeOut_2000]
+[image,yellowunhappy,yellow1,-9,-2,0,spFadeIn_2000]
+"Clearly, I brought you here, yet you¡¯ve become my tour guide!"[w]
+[remove,yellowunhappy,spFadeOut_2000]
 
 [image,hesehahahappy,hese3,-9,-2,0,spFadeIn_2000]
-"That's wonderful! I'm looking forward to it too!"[w]
+"Alright, what could the second gift be... Oh, you probably won't tell me. Let's go find it together!"[w]
 [remove,hesehahahappy,spFadeOut_2000]
+
+
 [hide]
