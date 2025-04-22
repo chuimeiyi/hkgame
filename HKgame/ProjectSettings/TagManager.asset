@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Damager
   - SpawnPoint
-  - item2
+  - item5
   layers:
   - Default
   - TransparentFX
