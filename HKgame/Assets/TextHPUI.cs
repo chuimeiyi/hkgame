@@ -12,6 +12,10 @@ public class TextHPUI : MonoBehaviour
     private int currentHealth;
     public Text healthText;
 
+    void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     public void SetMaxHealths(int maxHealths) {
         health = maxHealths;
         healthText.text = "x" + health.ToString();

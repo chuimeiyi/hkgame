@@ -8,14 +8,16 @@ public class SwitchScene : MonoBehaviour {
 
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
     }
     public string sceneName; // Assign the scene name in the Inspector
 
+    private void Update()
+    {
+    }
     public void LoadTargetScene()
     {
         SceneManager.LoadScene(sceneName);
-        Destroy(gameObject);
+
     }
 }
 
