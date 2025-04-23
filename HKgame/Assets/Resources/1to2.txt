@@ -15,6 +15,7 @@
 [remove,hesehappy,spFadeOut_2000]
 
 [image,yellowunhappy,yellow1,-9,-2,0,spFadeIn_2000]
+
 "Clearly, I brought you here, yet you¡¯ve become my tour guide!"[w]
 [remove,yellowunhappy,spFadeOut_2000]
 
