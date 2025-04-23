@@ -1,0 +1,26 @@
+[show]
+
+[image,hesehahahappy,hese3,-9,-2,0,spFadeIn_2000]
+"The fourth gift is actually a painting! Did you create it yourself?"[w]
+[remove,hesehahahappy,spFadeOut_2000]
+
+[image,yellowhappy,yellow3,-9,-2,0,spFadeIn_2000]
+"Yes, I spent the whole day painting it."[w]
+[remove,yellowhappy,spFadeOut_2000]
+
+[image,hesehahahappy,hese3,-9,-2,0,spFadeIn_2000]
+"I'm glad you like it! By the way, are there other places we need to go next?"[w]
+[remove,hesehahahappy,spFadeOut_2000]
+
+[image,yellowhappy,yellow3,-9,-2,0,spFadeIn_2000]
+"This is the last stop, the Golden Bauhinia Square!"[w]
+"In the center of the square, there¡¯s a large Bauhinia sculpture, which symbolizes Hong Kong's prosperity and development. "[w]
+" It¡¯s a popular spot for photos and holds significant meaning for all Hong Kong citizens."[w]
+"That¡¯s why I chose this place as our last stop!"[w]
+[remove,yellowhappy,spFadeOut_2000]
+
+[image,hesehappy,hese4,-9,-2,0,spFadeIn_2000]
+"Let's go find the final gift!"[w]
+[remove,hesehappy,spFadeOut_2000]
+
+[hide]

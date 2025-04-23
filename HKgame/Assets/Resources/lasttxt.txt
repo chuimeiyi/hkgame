@@ -1,0 +1,13 @@
+[show]
+
+[image,hesehahahappy,hese3,-9,-2,0,spFadeIn_2000]
+"I¡¯m so glad you had a great time! Thank you for appreciating all the effort put into planning this surprise."[w]
+[remove,hesehahahappy,spFadeOut_2000]
+
+[image,yellowhappy,yellow3,-9,-2,0,spFadeIn_2000]
+"Of course! Let¡¯s take a photo together!"[w]
+[remove,yellowhappy,spFadeOut_2000]
+
+[hide]
+
+[image,bg,last,0,0,0,spFadeIn_2000]
