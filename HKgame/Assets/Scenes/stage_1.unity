@@ -4702,6 +4702,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeText: {fileID: 63550992}
   stageentertime: 4
+  enteredtime: 0
+  reset: 1
 --- !u!1 &1327524118
 GameObject:
   m_ObjectHideFlags: 0

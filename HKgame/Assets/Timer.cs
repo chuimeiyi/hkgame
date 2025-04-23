@@ -10,17 +10,28 @@ public class Timer : MonoBehaviour
     public Text timeText;  // Assign in Inspector
     public int stageentertime;
     public int enteredtime;
+    public bool reset;
+
 
 
 
 
     void Start()
     {
-        // Load saved time (if any)
-        myTimer = PlayerPrefs.GetFloat("scoreData", myTimer);
-        UpdateDisplay();
         enteredtime = 0;
+        if (reset == true)
+        {
+            Resettime();
+            SaveTime();
+        }
+        else {
+            // Load saved time (if any)
+            myTimer = PlayerPrefs.GetFloat("scoreData", myTimer);
+            UpdateDisplay();
+        }
+
     }
+
 
     void Update()
     {
@@ -28,12 +39,12 @@ public class Timer : MonoBehaviour
             enteredtime = enteredtime + 1;
         }
 
-            if (enteredtime >= stageentertime)
-        {
+            if (enteredtime >= stageentertime){
             myTimer += Time.deltaTime;
             UpdateDisplay();
             SaveTime();
-        }
+            }
+
     }
 
     void UpdateDisplay()
@@ -52,5 +63,10 @@ public class Timer : MonoBehaviour
 
     public void resetcount() {
         enteredtime = 0;
+    }
+
+    public void Resettime()
+    {
+        myTimer = 0;
     }
 }
