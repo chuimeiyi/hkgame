@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class SwitchScene : MonoBehaviour {
 
+    public string sceneName;
+    public string sceneName2;
+
     void Start()
     {
     }
-    public string sceneName; // Assign the scene name in the Inspector
 
     private void Update()
     {
@@ -19,6 +21,14 @@ public class SwitchScene : MonoBehaviour {
         SceneManager.LoadScene(sceneName);
 
     }
+
+    public void reLoadTargetScene()
+    {
+        SceneManager.LoadScene(sceneName2);
+
+    }
+
+
 }
 
 

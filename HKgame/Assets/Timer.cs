@@ -51,7 +51,7 @@ public class Timer : MonoBehaviour
     {
         if (timeText != null)
         {
-            timeText.text = myTimer.ToString("0.0's'");
+            timeText.text = "time:" + myTimer.ToString("0.0's'");
         }
     }
 
