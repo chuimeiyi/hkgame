@@ -1,0 +1,42 @@
+[show]
+
+[image,hesehahahappy,hese3,-9,-2,0,spFadeIn_2000]
+"The third gift is a handprint souvenir! I'm glad I got that for you, especially since you wanted to buy one the last time we were here. What a thoughtful choice!"[w]
+[remove,hesehahahappy,spFadeOut_2000]
+
+[image,yellowhappy,yellow3,-9,-2,0,spFadeIn_2000]
+"I remember that! You noticed how much I liked it in the souvenir shop. It¡¯s great to finally have one now!"[w]
+[remove,yellowhappy,spFadeOut_2000]
+
+
+[image,hesehappy,hese4,-9,-2,0,spFadeIn_2000]
+"How did you bring me to the Tian Tan Buddha?"[w]
+[remove,hesehappy,spFadeOut_2000]
+
+[image,yellowhappy,yellow3,-9,-2,0,spFadeIn_2000]
+"Because the air here is very fresh!"[w]
+[remove,yellowhappy,spFadeOut_2000]
+
+[image,hesehappy,hese4,-9,-2,0,spFadeIn_2000]
+"Well, that reason is quite flimsy!"[w]
+[remove,hesehappy,spFadeOut_2000]
+
+[image,yellowhappy,yellow3,-9,-2,0,spFadeIn_2000]
+"haha..."[w]
+[remove,yellowhappy,spFadeOut_2000]
+
+[image,hesehappy,hese4,-9,-2,0,spFadeIn_2000]
+"The Tian Tan Buddha stands at 34 meters tall, making it the largest outdoor bronze sitting Buddha in the world, and it's truly breathtaking. "[w]
+"Additionally, this place is a favorite among Buddhists and holds significant meaning for Buddhism. "[w]
+[remove,hesehappy,spFadeOut_2000]
+
+[image,yellowunhappy,yellow1,-9,-2,0,spFadeIn_2000]
+"That's not the main point. Actually, I brought you here to see the scenery of Lantau Island..."[w]
+[remove,yellowunhappy,spFadeOut_2000]
+
+[image,hese,hese2,-9,-2,0,spFadeIn_2000]
+"Well..."[w]
+[remove,hese,spFadeOut_2000]
+
+
+[hide]
