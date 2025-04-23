@@ -11,7 +11,7 @@ public class lasttxt : MonoBehaviour
     void Start()
     {
         fs = FlowerManager.Instance.GetFlowerSystem("nekoQAQ");
-        fs.ReadTextFromResource("lasttxt");
+        fs.ReadTextFromResource("lasttxt1");
     }
 
     // Update is called once per frame
