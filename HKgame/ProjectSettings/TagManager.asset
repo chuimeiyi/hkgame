@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Damager
   - SpawnPoint
-  - item3
+  - track
   layers:
   - Default
   - TransparentFX
@@ -43,7 +43,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: ui
-    uniqueID: 681972275
     locked: 0

@@ -10,7 +10,7 @@ public class shootscript : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        player = GameObject.FindGameObjectWithTag("track");
+        player = GameObject.FindGameObjectWithTag("Player");
 
         Vector3 direction = player.transform.position - transform.position;
         body.velocity = new Vector2 (direction.x, direction.y).normalized * force;
@@ -21,4 +21,5 @@ public class shootscript : MonoBehaviour
     {
         
     }
-}
+
+    }
