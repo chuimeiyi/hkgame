@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class shootscript : MonoBehaviour
 {
     private GameObject player;
     private Rigidbody2D body;
     public float force;
+    public string items;
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -17,9 +20,11 @@ public class shootscript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void Update() {
 
     }
+    
+
+
+
+}

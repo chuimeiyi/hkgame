@@ -30,6 +30,8 @@ public class playerMovement : MonoBehaviour
     private bool isGrounded;
     public string items;
     public colC process;
+    public string stuff;
+    public GameObject objectToDestroy;
 
     private void Start()
     {
@@ -95,6 +97,11 @@ public class playerMovement : MonoBehaviour
         {
             process.itemCount++;
             Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag(stuff))
+        {
+            Destroy(objectToDestroy);
         }
     }
 
