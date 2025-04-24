@@ -99,10 +99,7 @@ public class playerMovement : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        if (collision.gameObject.CompareTag(stuff))
-        {
-            Destroy(objectToDestroy);
-        }
+
     }
 
 }

@@ -810,7 +810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &82969978
 Transform:
   m_ObjectHideFlags: 0
@@ -1068,7 +1068,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -1397,6 +1397,7 @@ MonoBehaviour:
   items: item2
   process: {fileID: 1320059025}
   stuff: Damager
+  objectToDestroy: {fileID: 0}
 --- !u!95 &152305193
 Animator:
   serializedVersion: 5
@@ -2920,7 +2921,7 @@ GameObject:
   - component: {fileID: 721663845}
   - component: {fileID: 721663844}
   - component: {fileID: 721663843}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "\u653B\u51FB\u7EA2"
   m_TagString: Damager
   m_Icon: {fileID: 0}
@@ -3007,6 +3008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 3
+  items: Damager
 --- !u!50 &721663844
 Rigidbody2D:
   serializedVersion: 4
@@ -4973,6 +4975,7 @@ MonoBehaviour:
   items: item2
   process: {fileID: 1320059025}
   stuff: Damager
+  objectToDestroy: {fileID: 721663840}
 --- !u!114 &1389102857
 MonoBehaviour:
   m_ObjectHideFlags: 0

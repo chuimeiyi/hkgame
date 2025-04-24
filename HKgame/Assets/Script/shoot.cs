@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class shoot : MonoBehaviour
 {
@@ -24,12 +26,14 @@ public class shoot : MonoBehaviour
             shoots();
 
 
-            }
+        }
 
     }
 
-    void shoots() { 
-        
+    void shoots()
+    {
+
         Instantiate(bullet, bulletPos.position, Quaternion.identity);
     }
+
 }
