@@ -16,6 +16,7 @@ public class colC : MonoBehaviour
     public Text totalcountgo;
     public GameObject finishscreen;
     int total;
+    int stage;
     public bool reset;
 
 
@@ -50,7 +51,7 @@ public class colC : MonoBehaviour
 
         if (itemCount > temp)
         {
-            total = total + itemCount * 10;
+            total = total + 10;
             temp = temp + 1;
             Savetotal();
         }
