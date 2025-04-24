@@ -11,7 +11,7 @@
 
 [image,hesehappy,hese4,-9,-2,0,spFadeIn_2000]
 "The Avenue of Stars features many handprints and statues of Hong Kong movie stars, allowing visitors to find their favorite celebrities and take memorable photos."[w]
-"Plus, the view of Victoria Harbour is stunning¡ªit's truly a fantastic spot!"
+"Plus, the view of Victoria Harbour is stunning¡ªit's truly a fantastic spot!"[w]
 [remove,hesehappy,spFadeOut_2000]
 
 [image,yellowhappy,yellow3,-9,-2,0,spFadeIn_2000]
