@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 441213599}
   - component: {fileID: 441213602}
   m_Layer: 5
-  m_Name: exit
+  m_Name: quitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -415,6 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32a0151a63fd834186717f0952251e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quitButton: {fileID: 441213599}
 --- !u!1 &697813890
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerHealth : MonoBehaviour
@@ -45,11 +46,17 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine(FlashRed());
 
         if (currentHealth <= 0) {
-            OnPlayedDied.Invoke();
+            ResetGame();
         }
     }
 
-    private IEnumerator FlashRed() {
+    void ResetGame()
+    {
+        Debug.Log("Game Over! Restarting...");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+        private IEnumerator FlashRed() {
         spriteRenderer.color = Color.red;    
         yield return new WaitForSeconds(0.2f);
         spriteRenderer.color = Color.white;

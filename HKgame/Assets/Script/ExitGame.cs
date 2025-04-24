@@ -1,10 +1,18 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ExitGame : MonoBehaviour
 {
-    // 退出游戏的方法
+    public Button quitButton;
+
+    void Start()
+    {
+        quitButton.onClick.AddListener(QuitGame);
+    }
+
     public void QuitGame()
     {
+        Debug.Log("QuitGame method called");
         Application.Quit();
     }
 }
