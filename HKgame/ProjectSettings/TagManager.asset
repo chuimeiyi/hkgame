@@ -9,7 +9,6 @@ TagManager:
   - track
   - item2
   - item1
-  - item3
   layers:
   - Default
   - TransparentFX
