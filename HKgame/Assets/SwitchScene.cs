@@ -22,11 +22,7 @@ public class SwitchScene : MonoBehaviour {
 
     }
 
-    public void reLoadTargetScene()
-    {
-        SceneManager.LoadScene(sceneName2);
 
-    }
 
 
 }

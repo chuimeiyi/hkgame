@@ -50,10 +50,10 @@ public class colC : MonoBehaviour
 
         if (itemCount > temp)
         {
-            total = itemCount * 10;
+            total = total + itemCount * 10;
             temp = temp + 1;
+            Savetotal();
         }
-        Savetotal();
 
     }
     public void Savetotal()
