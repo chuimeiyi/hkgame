@@ -5,7 +5,7 @@ using UnityEngine;
 public class itemSpawner : MonoBehaviour
 {
     public Transform[] spawnPoint;
-    public GameObject[] objects;
+    public GameObject[] Objects;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class itemSpawner : MonoBehaviour
     void SpawnItem() {
 
         
-        Instantiate(objects[Random.Range(0,1)], spawnPoint[Random.Range(0, 14)].position,Quaternion.identity);
+        Instantiate(Objects[Random.Range(0, 1)], spawnPoint[Random.Range(0, 15)].position,Quaternion.identity);
 
 
 

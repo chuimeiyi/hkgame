@@ -30,8 +30,7 @@ public class playerMovement : MonoBehaviour
     private bool isGrounded;
     public string items;
     public colC process;
-    public string stuff;
-    public GameObject objectToDestroy;
+
 
     private void Start()
     {
