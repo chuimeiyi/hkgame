@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
+    public GameObject[] groundCheckPods;
+    public bool lockPlayer = false;
 
     public Rigidbody2D rb;
 
@@ -39,44 +41,51 @@ public class playerMovement : MonoBehaviour
 
     void Update()
     {
+
+
+        Debug.Log("GroundCheckPods length: " + (groundCheckPods != null ? groundCheckPods.Length.ToString() : "null"));
+
         isGrounded = Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer);
 
         float horizontalMovement = Input.GetAxis("Horizontal");
 
-        if (Input.GetKey(right))   //right
+        if (!lockPlayer)
         {
-            animator.SetFloat("magnitude", 1);
-            animator.SetFloat("idle", 1);
-            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+            if (Input.GetKey(right))   //right
+            {
+                animator.SetFloat("magnitude", 1);
+                animator.SetFloat("idle", 1);
+                rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
 
-            magnitude = 1;
-            idle = 0;
-        }
-        else if (Input.GetKey(left))   //left
-        {
-            animator.SetFloat("magnitude", 2);
-            animator.SetFloat("idle", 1);
-            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
+                magnitude = 1;
+                idle = 0;
+            }
+            else if (Input.GetKey(left))   //left
+            {
+                animator.SetFloat("magnitude", 2);
+                animator.SetFloat("idle", 1);
+                rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
 
-            magnitude = 2;
-            idle = 0;
-        }
-        else if (magnitude > 1 || idle > 1)
-        {     //idle for each right, left
-            animator.SetFloat("magnitude", magnitude);
-            animator.SetFloat("idle", idle);
-            rb.velocity = new Vector2(0, rb.velocity.y);
-        }
-        else
-        {
-            animator.SetFloat("magnitude", -1);
-            animator.SetFloat("idle", -1);
-            rb.velocity = new Vector2(0, rb.velocity.y);
-        }
+                magnitude = 2;
+                idle = 0;
+            }
+            else if (magnitude > 1 || idle > 1)
+            {     //idle for each right, left
+                animator.SetFloat("magnitude", magnitude);
+                animator.SetFloat("idle", idle);
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
+            else
+            {
+                animator.SetFloat("magnitude", -1);
+                animator.SetFloat("idle", -1);
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
 
-        if (Input.GetKeyDown(jump) && isGrounded)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            if (Input.GetKeyDown(jump) && isGrounded)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            }
         }
 
     }
@@ -99,5 +108,7 @@ public class playerMovement : MonoBehaviour
 
 
     }
+
+    
 
 }

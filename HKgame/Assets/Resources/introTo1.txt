@@ -1,3 +1,5 @@
+[lock_player]
+
 [show]
 
 [image,yellowhappy,yellow3,-9,-2,0,spFadeIn_2000]
@@ -16,3 +18,5 @@
 "That is wonderful! I am looking forward to it too!"[w]
 [remove,hesehahahappy,spFadeOut_2000]
 [hide]
+
+[unlock_player]
