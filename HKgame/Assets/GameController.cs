@@ -64,7 +64,6 @@ public class GameController : MonoBehaviour
         PlayerHealth.OnPlayedDied += GameOverScreen;
         gameOverScreen.SetActive(false);
     }
-    
 
     // 玩家锁定方法
     public void LockPlayers(bool isLocked)

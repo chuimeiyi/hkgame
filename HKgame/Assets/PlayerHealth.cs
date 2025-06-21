@@ -7,8 +7,10 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 5;
-    public int currentHealth;
+   public int maxHealth = 5;
+   public int currentHealth;
+
+    public TextHPUI textHPUI;
 
     private SpriteRenderer spriteRenderer;
 
@@ -30,38 +32,27 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void ResetHealth()
-    {
+    void ResetHealth() {
         currentHealth = maxHealth;
+        textHPUI.SetMaxHealth(maxHealth);
         Time.timeScale = 1;
     }
 
-    public void TakeDamage(int damage)
-    {
+    public void TakeDamage(int damage) {
         currentHealth -= damage;
+        textHPUI.UpdateHealth(currentHealth);
 
         StartCoroutine(FlashRed());
 
-        if (currentHealth <= 0)
-        {
-            StartCoroutine(DelayedDeath());  // Wait before death event
+        if (currentHealth <= 0) {
+            OnPlayedDied.Invoke();
         }
     }
 
-    private IEnumerator DelayedDeath()
-    {
-        yield return new WaitForSeconds(0.2f);  
-        OnPlayedDied.Invoke();              
-    }
-
-    private IEnumerator FlashRed()
-    {
-        spriteRenderer.color = Color.red;
+    private IEnumerator FlashRed() {
+        spriteRenderer.color = Color.red;    
         yield return new WaitForSeconds(0.2f);
         spriteRenderer.color = Color.white;
     }
-
-
-
 
 }
