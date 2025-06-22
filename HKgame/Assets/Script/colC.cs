@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Flower;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 
 public class colC : MonoBehaviour
 {
@@ -12,7 +14,7 @@ public class colC : MonoBehaviour
     public int temp;
     public Text itemcount;
     public Text totaliscorecount;
-    public Text totalcountgo;
+    public TMP_Text totalcountgo;
     public GameObject finishscreen;
     int total;
     int stage;
