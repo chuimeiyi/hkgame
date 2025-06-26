@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 
 public class playerMovement : MonoBehaviour
@@ -16,8 +15,12 @@ public class playerMovement : MonoBehaviour
 
     [Header("Jumping")]
     public float jumpPower;
+    private float jumpTimeToApex = 6f;
+    public float jumpCutGravityMult = 2f;
+    public float jumpUpGravityMult = 0.5f;
     public float PressedJumpTime;
-    public bool _isJumpCut;
+    [Range(0.01f,0.5f)]public float jumpInputBufferTime;
+    public bool IsJumping;
 
     [Header("GroundCheck")]
     public Transform groundCheckPos;
@@ -28,8 +31,7 @@ public class playerMovement : MonoBehaviour
     public float baseGravity = 1f;
     public float maxFallSpeed = 10f;
     public float fallSpeedMultiplier = 1f;
-    public float jumpCutGravity = 3f;
-   
+
     public KeyCode left;
     public KeyCode right;
     public KeyCode jump;
@@ -50,22 +52,13 @@ public class playerMovement : MonoBehaviour
 
     void Update()
     {
+        PressedJumpTime -= Time.deltaTime;
 
         Debug.Log("GroundCheckPods length: " + (groundCheckPods != null ? groundCheckPods.Length.ToString() : "null"));
 
         isGrounded = Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer);
 
         float horizontalMovement = Input.GetAxis("Horizontal");
-
-        if (!isGrounded && Input.GetKeyUp(jump))
-        {
-            _isJumpCut = true;
-        }
-        else if (isGrounded)
-        {
-            _isJumpCut = false;
-        }
-
 
         if (!lockPlayer)
         {
@@ -100,33 +93,52 @@ public class playerMovement : MonoBehaviour
                 rb.velocity = new Vector2(0, rb.velocity.y);
             }
 
-
+            rb.gravityScale = baseGravity;
             if (Input.GetKeyDown(jump) && isGrounded)
             {
-                rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+                // rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+                OnJumpInput();
+                Jump();
             }
-
+            if (Input.GetKeyUp(jump) && !isGrounded) {
+                rb.gravityScale = rb.gravityScale * jumpCutGravityMult;
+                //rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, -maxFallSpeed));
+            }
         }
-
-    Gravity();
 
     }
 
     private void Gravity()
     {
-        if (rb.velocity.y < 0 && !_isJumpCut)
+        if (rb.velocity.y < 0)
         {
             rb.gravityScale = baseGravity + fallSpeedMultiplier;
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, -maxFallSpeed));
         }
-        else if (_isJumpCut) {
-            rb.gravityScale = baseGravity + jumpCutGravity;
-            rb.velocity = new Vector2(rb.velocity.x, Mathf.Max(rb.velocity.y, -maxFallSpeed));
-        }
-        else{
+        else
+        {
             rb.gravityScale = baseGravity;
         }
     }
+    private void Jump()
+    {
+        //Ensures we can't call Jump multiple times from one press
+        PressedJumpTime = 0;
+
+        jumpPower = Mathf.Abs(baseGravity) * jumpTimeToApex;
+        float force = jumpPower;
+        if (rb.velocity.y < 0)
+            force -= rb.velocity.y;
+
+        rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+    }
+
+ 
+    public void OnJumpInput()
+    {
+        PressedJumpTime = jumpInputBufferTime;
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;

@@ -925,7 +925,7 @@ GameObject:
   - component: {fileID: 152305194}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -991,7 +991,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: da2e9a03a44b5a64da4d0645a87f5f5b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1197,11 +1197,17 @@ MonoBehaviour:
   rb: {fileID: 152305187}
   moveSpeed: 5
   jumpPower: 7
+  PressedJumpTime: 0
+  _isJumpCut: 0
   groundCheckPos: {fileID: 731408659}
   groundCheckSize: {x: 0.52, y: 0.04}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  baseGravity: 1
+  maxFallSpeed: 10
+  fallSpeedMultiplier: 1
+  jumpCutGravity: 2
   left: 97
   right: 100
   jump: 119
@@ -4102,11 +4108,17 @@ MonoBehaviour:
   rb: {fileID: 0}
   moveSpeed: 5
   jumpPower: 5
+  PressedJumpTime: 0
+  _isJumpCut: 0
   groundCheckPos: {fileID: 0}
   groundCheckSize: {x: 0.5, y: 0.05}
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
+  baseGravity: 1
+  maxFallSpeed: 10
+  fallSpeedMultiplier: 1
+  jumpCutGravity: 2
   left: 0
   right: 0
   jump: 0
@@ -5269,7 +5281,7 @@ GameObject:
   - component: {fileID: 1389102861}
   m_Layer: 0
   m_Name: player2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5321,11 +5333,17 @@ MonoBehaviour:
   rb: {fileID: 1389102859}
   moveSpeed: 5
   jumpPower: 7
+  PressedJumpTime: 0
+  _isJumpCut: 0
   groundCheckPos: {fileID: 728120742}
   groundCheckSize: {x: 0.52, y: 0.04}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  baseGravity: 1
+  maxFallSpeed: 10
+  fallSpeedMultiplier: 1
+  jumpCutGravity: 2
   left: 276
   right: 275
   jump: 273
@@ -5502,7 +5520,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: da2e9a03a44b5a64da4d0645a87f5f5b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
