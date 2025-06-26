@@ -43,20 +43,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        if (_instance != null && _instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
 
-        _instance = this;
-        DontDestroyOnLoad(gameObject);
-
-        // 场景加载时自动查找玩家
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
 
     void Start()
     {
