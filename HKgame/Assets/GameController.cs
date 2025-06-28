@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+ï»¿using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -16,16 +17,16 @@ public class GameController : MonoBehaviour
     [Header("UI References")]
     public GameObject pauseMenu;
     public GameObject gameOverScreen;
-    public Text score;
+
 
     [Header("Player Settings")]
-    public playerMovement[] players; // Íæ¼ÒÊı×é£¨ÔÚInspectorÖĞÅäÖÃ£©
+    public playerMovement[] players; // ç©å®¶æ•°ç»„ï¼ˆåœ¨Inspectorä¸­é…ç½®ï¼‰
 
     private int scoreCount;
     public colC itemCount;
     private static GameController _instance;
 
-    // µ¥ÀıÊµÏÖ
+    // å•ä¾‹å®ç°
     public static GameController Instance
     {
         get
@@ -43,7 +44,20 @@ public class GameController : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        // åœºæ™¯åŠ è½½æ—¶è‡ªåŠ¨æŸ¥æ‰¾ç©å®¶
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
     void Start()
     {
@@ -51,9 +65,9 @@ public class GameController : MonoBehaviour
         PlayerHealth.OnPlayedDied += GameOverScreen;
         gameOverScreen.SetActive(false);
     }
-    
 
-    // Íæ¼ÒËø¶¨·½·¨
+
+    // ç©å®¶é”å®šæ–¹æ³•
     public void LockPlayers(bool isLocked)
     {
         if (players == null || players.Length == 0)
@@ -72,13 +86,13 @@ public class GameController : MonoBehaviour
         }
     }
 
-    // ³¡¾°¼ÓÔØ»Øµ÷
+    // åœºæ™¯åŠ è½½å›è°ƒ
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         InitializePlayers();
     }
 
-    // ³õÊ¼»¯Íæ¼ÒÒıÓÃ
+    // åˆå§‹åŒ–ç©å®¶å¼•ç”¨
     private void InitializePlayers()
     {
         if (players == null || players.Length == 0)
@@ -88,7 +102,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    // Ô­ÓĞ¹¦ÄÜ±£³Ö²»±ä
+    // åŸæœ‰åŠŸèƒ½ä¿æŒä¸å˜
     public void RestartGame()
     {
         gameOverScreen.SetActive(false);

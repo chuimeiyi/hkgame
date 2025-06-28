@@ -5,9 +5,11 @@ using UnityEngine.InputSystem;
 
 public class Timer : MonoBehaviour
 {
-    public static Timer Instance;  // Singleton instance
-    public static float myTimer = 0;  // Static to persist
-    public Text timeText;  // Assign in Inspector
+    public static Timer Instance;  
+    public static float myTimer = 0;  
+    public Text timeText;  
+
+
     public int stageentertime;
     public int enteredtime;
     public bool reset;

@@ -10,12 +10,20 @@ using TMPro;
 
 public class colC : MonoBehaviour
 {
+    [Header("Items Counting")]
     public int itemCount;
-    public int temp;
+    public int tempCount;
     public Text itemcount;
-    public Text totaliscorecount;
-    public TMP_Text totalcountgo;
+
+    [Header("Scores")]
+    public TMP_Text finishUiTotal;
+    public TMP_Text gameOverUiTotal;
+    public Text scoreText;
+
+    [Header("UI References")]
     public GameObject finishscreen;
+
+    [Header("Extra settings")]
     int total;
     int stage;
     public bool reset;
@@ -42,18 +50,18 @@ public class colC : MonoBehaviour
         itemcount.text = "Item :" + itemCount.ToString();
 
 
-        totaliscorecount.text = "score :" + total.ToString();
-        totalcountgo.text = "score :" + total.ToString();
+        finishUiTotal.text = total.ToString();
+        gameOverUiTotal.text = "score :" + total.ToString();
         if (itemCount == 10) {
          
             finishscreen.SetActive(true);
             Time.timeScale = 0;
         }
 
-        if (itemCount > temp)
+        if (itemCount > tempCount)
         {
             total = total + 10;
-            temp = temp + 1;
+            tempCount = tempCount + 1;
             Savetotal();
         }
 

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class count : MonoBehaviour
 {
-    public int maxHealth;
     public int currentHealth;
     Animator animator;
 
@@ -24,7 +23,7 @@ public class count : MonoBehaviour
     }
 
     public void setCount() {
-        currentHealth = GameObject.Find("player").GetComponent<PlayerHealth>().currentHealth;
+  
         animator.SetInteger("count", currentHealth);
     }
 

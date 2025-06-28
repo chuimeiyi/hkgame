@@ -7,20 +7,38 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 5;
-    public int currentHealth;
 
     private SpriteRenderer spriteRenderer;
 
     public static event Action OnPlayedDied;
 
+    public int currentHealth = HealthManager.currentHealth;
+    public int maxHealth = HealthManager.currentHealth;
+
+
     void Start()
     {
-        ResetHealth();
-
         spriteRenderer = GetComponent<SpriteRenderer>();
         GameController.OnReset += ResetHealth;
+
     }
+
+
+
+
+    void Update()
+    {
+        if (currentHealth != HealthManager.currentHealth)
+        {
+            HealthManager.maxHealth = currentHealth;
+        }
+
+
+    }
+
+
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         string tag = collision.collider.gameObject.tag;
@@ -30,11 +48,14 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+
+
     void ResetHealth()
     {
         currentHealth = maxHealth;
         Time.timeScale = 1;
     }
+
 
     public void TakeDamage(int damage)
     {
@@ -42,10 +63,6 @@ public class PlayerHealth : MonoBehaviour
 
         StartCoroutine(FlashRed());
 
-        if (currentHealth <= 0)
-        {
-            StartCoroutine(DelayedDeath());  // Wait before death event
-        }
     }
 
     private IEnumerator DelayedDeath()
