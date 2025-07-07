@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerHealth : MonoBehaviour
@@ -12,32 +13,17 @@ public class PlayerHealth : MonoBehaviour
 
     public static event Action OnPlayedDied;
 
-    public int currentHealth = HealthManager.currentHealth;
-    public int maxHealth = HealthManager.currentHealth;
-
+    public int maxHealth = 5;
+    public int currentHealth;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         GameController.OnReset += ResetHealth;
-
-    }
-
-
-
-
-    void Update()
-    {
-        if (currentHealth != HealthManager.currentHealth)
-        {
-            HealthManager.maxHealth = currentHealth;
-        }
+        ResetHealth();
 
 
     }
-
-
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -62,13 +48,23 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
 
         StartCoroutine(FlashRed());
-
+        if (currentHealth <= 0)
+        {
+            StartCoroutine(DelayedDeath());
+        }
     }
+
+
+        void ResetGame()
+        {
+            Debug.Log("Game Over! Restarting...");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
 
     private IEnumerator DelayedDeath()
     {
-        yield return new WaitForSeconds(0.2f);  
-        OnPlayedDied.Invoke();              
+        yield return new WaitForSeconds(0.2f);
+        OnPlayedDied.Invoke();
     }
 
     private IEnumerator FlashRed()
