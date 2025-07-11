@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class count : MonoBehaviour
+public class count1 : MonoBehaviour
 {
     public int currentHealth;
     Animator animator;
@@ -22,9 +21,9 @@ public class count : MonoBehaviour
         setCount();
     }
 
-    public void setCount() {
-        currentHealth = GameObject.Find("player").GetComponent<PlayerHealth>().currentHealth;
+    public void setCount()
+    {
+        currentHealth = GameObject.Find("player2").GetComponent<PlayerHealth>().currentHealth;
         animator.SetInteger("count", currentHealth);
     }
-
 }

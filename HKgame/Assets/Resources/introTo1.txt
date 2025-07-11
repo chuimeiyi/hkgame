@@ -3,20 +3,24 @@
 [show]
 
 [image,yellowhappy,yellow3,-9,-2,0,spFadeIn_2000]
-"What do you think of the scenery here?"[w]
+"What do you think of the scenery here? "press space""[w]
 [remove,yellowhappy,spFadeOut_2000]
 
 [image,hesehappy,hese4,-9,-2,0,spFadeIn_2000]
-"I think it is really nice and full of life!"[w]
+"I think it is really nice and full of life! "press space""[w]
 [remove,hesehappy,spFadeOut_2000]
 
 [image,yellowhappy,yellow3,-9,-2,0,spFadeIn_2000]
-"That is great! I have prepared many surprises for our journey today."[w]
+"That is great! I have prepared many surprises for our journey today "press space""[w]
 [remove,yellowhappy,spFadeOut_2000]
 
 [image,hesehahahappy,hese3,-9,-2,0,spFadeIn_2000]
-"That is wonderful! I am looking forward to it too!"[w]
+"That is wonderful! I am looking forward to it too! "press space""[w]
 [remove,hesehahahappy,spFadeOut_2000]
+
+"player 1 control A,W,D   player 2 control <, ^ ,> "press space"би"[w]
+
+"your goal: collect all item in different stages "press space""[w]
 [hide]
 
 [unlock_player]

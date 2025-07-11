@@ -14,7 +14,7 @@ public class HealthManager : MonoBehaviour
 
     public void sethealth() {
 
-        currentHealth = health;
+
     }
     
 }

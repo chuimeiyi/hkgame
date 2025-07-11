@@ -2,20 +2,20 @@
 
 
 [image,hesehahahappy,hese3,-9,-2,0,spFadeIn_2000]
-"The second gift is a water sign, which is a unique minibus marker in Hong Kong. That's really nice!"[w]
+"The second gift is a water sign, which is a unique minibus marker in Hong Kong. That's really nice! "press space""[w]
 [remove,hesehahahappy,spFadeOut_2000]
 
 [image,yellowhappy,yellow3,-9,-2,0,spFadeIn_2000]
-"That's right! I thought you would like this gift. Now, we have three more gifts to go, and we've arrived at the Avenue of Stars!"[w]
+"That's right! I thought you would like this gift. Now, we have three more gifts to go, and we've arrived at the Avenue of Stars! "press space""[w]
 [remove,yellowhappy,spFadeOut_2000]
 
 [image,hesehappy,hese4,-9,-2,0,spFadeIn_2000]
 "The Avenue of Stars features many handprints and statues of Hong Kong movie stars, allowing visitors to find their favorite celebrities and take memorable photos."[w]
-"Plus, the view of Victoria Harbour is stunning¡ªit's truly a fantastic spot!"
+"Plus, the view of Victoria Harbour is stunning¡ªit's truly a fantastic spot! "press space""
 [remove,hesehappy,spFadeOut_2000]
 
 [image,yellowhappy,yellow3,-9,-2,0,spFadeIn_2000]
-"Sure! I'll take my time exploring the area. It sounds like a wonderful place to enjoy the sights and atmosphere!"[w]
+"Sure! I'll take my time exploring the area. It sounds like a wonderful place to enjoy the sights and atmosphere! "press space""[w]
 [remove,yellowhappy,spFadeOut_2000]
 
 [hide]
